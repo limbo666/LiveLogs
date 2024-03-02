@@ -1,4 +1,7 @@
 # LiveLogs
+![image](https://github.com/limbo666/LiveLogs/assets/331155/df2efe86-229a-49c1-99ce-32d22ab8ecda)
+
+## GUI preview
 ![image](https://github.com/limbo666/LiveLogs/assets/331155/c3ac81c6-dcb4-4ad1-9e23-2dd239475aea)
 
 ## Live Log Viewer and Search Tool for Windows
