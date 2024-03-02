@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "LiveLogs", "LiveLogs\LiveLogs.vbproj", "{59F6D6CC-63CD-4622-8FA0-A981F4A46332}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59F6D6CC-63CD-4622-8FA0-A981F4A46332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F6D6CC-63CD-4622-8FA0-A981F4A46332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F6D6CC-63CD-4622-8FA0-A981F4A46332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F6D6CC-63CD-4622-8FA0-A981F4A46332}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6368A1E2-A2B0-49AF-8E7F-DFE66B0A57B4}
+	EndGlobalSection
+EndGlobal
