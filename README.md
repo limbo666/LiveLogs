@@ -27,13 +27,13 @@ This application provides a simple yet powerful tool for viewing and searching l
 A.
 1. Get the program from [releases](https://github.com/limbo666/LiveLogs/releases).
 2. Unzip to a folder.
-3. Run the executable file (`LogViewer.exe`) to launch the application.
+3. Run the executable file (`LiveLogs.exe`) to launch the application.
 
 B.
 1. Clone the repository to your local machine.
-2. Open the solution file (`LogViewer.sln`) in Visual Studio.
+2. Open the solution file (`LiveLogs.sln`) in Visual Studio.
 3. Build the solution to generate the executable file.
-4. Run the executable file (`LogViewer.exe`) to launch the application.
+4. Run the executable file (`LiveLogs.exe`) to launch the application.
 
 ## License
 This project is licensed under the MIT License
