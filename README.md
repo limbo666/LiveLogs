@@ -1,15 +1,15 @@
 # LiveLogs
 ![image](https://github.com/limbo666/LiveLogs/assets/331155/df2efe86-229a-49c1-99ce-32d22ab8ecda)
 
-## GUI preview
-![image](https://github.com/limbo666/LiveLogs/assets/331155/c3ac81c6-dcb4-4ad1-9e23-2dd239475aea)
-
 ## Live Log Viewer and Search Tool for Windows
 This tool inspired from Linux "tail" command 
 
-
 ## Overview
 This application provides a simple yet powerful tool for viewing and searching log files. It allows users to load log files, monitor them in real-time, and search for specific text within the logs.
+
+## GUI preview
+![image](https://github.com/limbo666/LiveLogs/assets/331155/c3ac81c6-dcb4-4ad1-9e23-2dd239475aea)
+
 
 ## Features
 - **Real-time Log Monitoring:** The application continuously reads log files, displaying new entries as they are added.
