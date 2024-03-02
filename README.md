@@ -1,4 +1,6 @@
 # LiveLogs
+![image](https://github.com/limbo666/LiveLogs/assets/331155/c3ac81c6-dcb4-4ad1-9e23-2dd239475aea)
+
 ## Live Log Viewer and Search Tool for Windows
 This tool inspired from Linux "tail" command 
 
