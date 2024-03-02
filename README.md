@@ -36,4 +36,4 @@ B.
 4. Run the executable file (`LogViewer.exe`) to launch the application.
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License
