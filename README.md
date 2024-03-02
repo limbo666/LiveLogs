@@ -25,7 +25,7 @@ This application provides a simple yet powerful tool for viewing and searching l
 ## Getting Started
 **Select A or B** <br>
 A.
-1. Get the program from realeases.
+1. Get the program from [releases](https://github.com/limbo666/LiveLogs/releases).
 2. Unzip to a folder.
 3. Run the executable file (`LogViewer.exe`) to launch the application.
 
