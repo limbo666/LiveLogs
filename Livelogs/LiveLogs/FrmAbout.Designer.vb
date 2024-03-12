@@ -31,17 +31,19 @@ Partial Class FrmAbout
         PictureBox2 = New PictureBox()
         Panel1 = New Panel()
         Label5 = New Label()
+        PictureBox3 = New PictureBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' PictureBox1
         ' 
         PictureBox1.Image = My.Resources.Resources.New_Patch_Ver1_250x250
-        PictureBox1.Location = New Point(15, 5)
+        PictureBox1.Location = New Point(3, 5)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(87, 73)
+        PictureBox1.Size = New Size(87, 65)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
@@ -50,7 +52,7 @@ Partial Class FrmAbout
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(59, 136)
+        Label1.Location = New Point(52, 136)
         Label1.Name = "Label1"
         Label1.Size = New Size(52, 15)
         Label1.TabIndex = 1
@@ -86,9 +88,9 @@ Partial Class FrmAbout
         ' PictureBox2
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(52, 10)
+        PictureBox2.Location = New Point(-3, 10)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(120, 123)
+        PictureBox2.Size = New Size(232, 123)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 5
         PictureBox2.TabStop = False
@@ -106,34 +108,47 @@ Partial Class FrmAbout
         ' 
         ' Label5
         ' 
-        Label5.AutoSize = True
-        Label5.Location = New Point(44, 163)
+        Label5.Location = New Point(0, 163)
         Label5.Name = "Label5"
-        Label5.Size = New Size(163, 15)
+        Label5.Size = New Size(229, 15)
         Label5.TabIndex = 7
         Label5.Text = "A live log viewer for Windows"
+        Label5.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(-3, 10)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(232, 123)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 8
+        PictureBox3.TabStop = False
+        PictureBox3.Visible = False
         ' 
         ' FrmAbout
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(243, 283)
+        ClientSize = New Size(228, 283)
         Controls.Add(Label5)
         Controls.Add(Panel1)
         Controls.Add(PictureBox2)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        Controls.Add(PictureBox3)
         FormBorderStyle = FormBorderStyle.FixedDialog
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MaximizeBox = False
         MinimizeBox = False
         Name = "FrmAbout"
         ShowInTaskbar = False
-        Text = "About Livelogs"
+        Text = "Livelogs - About"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -146,4 +161,5 @@ Partial Class FrmAbout
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label5 As Label
+    Friend WithEvents PictureBox3 As PictureBox
 End Class

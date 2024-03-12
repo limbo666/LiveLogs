@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(form1))
         RichTextBox1 = New RichTextBox()
         Button1 = New Button()
@@ -36,6 +37,7 @@ Partial Class Form1
         ExitToolStripMenuItem = New ToolStripMenuItem()
         EditToolStripMenuItem = New ToolStripMenuItem()
         FindToolStripMenuItem = New ToolStripMenuItem()
+        SelectColorMarrkingToolStripMenuItem = New ToolStripMenuItem()
         HelpToolStripMenuItem = New ToolStripMenuItem()
         AboutToolStripMenuItem = New ToolStripMenuItem()
         Label2 = New Label()
@@ -44,6 +46,9 @@ Partial Class Form1
         Label5 = New Label()
         Label3 = New Label()
         Panel2 = New Panel()
+        Button3 = New Button()
+        tmrDetectLoading = New Timer(components)
+        lblLoading = New Label()
         MenuStrip1.SuspendLayout()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
@@ -149,7 +154,7 @@ Partial Class Form1
         ' 
         ' EditToolStripMenuItem
         ' 
-        EditToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {FindToolStripMenuItem})
+        EditToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {FindToolStripMenuItem, SelectColorMarrkingToolStripMenuItem})
         EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         EditToolStripMenuItem.Size = New Size(39, 20)
         EditToolStripMenuItem.Text = "Edit"
@@ -157,8 +162,14 @@ Partial Class Form1
         ' FindToolStripMenuItem
         ' 
         FindToolStripMenuItem.Name = "FindToolStripMenuItem"
-        FindToolStripMenuItem.Size = New Size(180, 22)
+        FindToolStripMenuItem.Size = New Size(188, 22)
         FindToolStripMenuItem.Text = "Find"
+        ' 
+        ' SelectColorMarrkingToolStripMenuItem
+        ' 
+        SelectColorMarrkingToolStripMenuItem.Name = "SelectColorMarrkingToolStripMenuItem"
+        SelectColorMarrkingToolStripMenuItem.Size = New Size(188, 22)
+        SelectColorMarrkingToolStripMenuItem.Text = "Conditional options..."
         ' 
         ' HelpToolStripMenuItem
         ' 
@@ -170,7 +181,7 @@ Partial Class Form1
         ' AboutToolStripMenuItem
         ' 
         AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        AboutToolStripMenuItem.Size = New Size(180, 22)
+        AboutToolStripMenuItem.Size = New Size(107, 22)
         AboutToolStripMenuItem.Text = "About"
         ' 
         ' Label2
@@ -229,6 +240,7 @@ Partial Class Form1
         ' 
         Panel2.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Panel2.BackColor = Color.Gainsboro
+        Panel2.Controls.Add(Button3)
         Panel2.Controls.Add(Label2)
         Panel2.Controls.Add(TextBox1)
         Panel2.Controls.Add(Label3)
@@ -237,11 +249,37 @@ Partial Class Form1
         Panel2.Size = New Size(713, 47)
         Panel2.TabIndex = 13
         ' 
+        ' Button3
+        ' 
+        Button3.Location = New Point(458, 44)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(75, 23)
+        Button3.TabIndex = 16
+        Button3.Text = "Button3"
+        Button3.UseVisualStyleBackColor = True
+        ' 
+        ' tmrDetectLoading
+        ' 
+        tmrDetectLoading.Interval = 200
+        ' 
+        ' lblLoading
+        ' 
+        lblLoading.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        lblLoading.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblLoading.Location = New Point(11, 529)
+        lblLoading.Name = "lblLoading"
+        lblLoading.Size = New Size(661, 18)
+        lblLoading.TabIndex = 16
+        lblLoading.Text = "LOADING..."
+        lblLoading.TextAlign = ContentAlignment.MiddleCenter
+        lblLoading.Visible = False
+        ' 
         ' form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(672, 668)
+        Controls.Add(lblLoading)
         Controls.Add(Label5)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
@@ -284,5 +322,9 @@ Partial Class Form1
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents SelectColorMarrkingToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button3 As Button
+    Friend WithEvents tmrDetectLoading As Timer
+    Friend WithEvents lblLoading As Label
 
 End Class

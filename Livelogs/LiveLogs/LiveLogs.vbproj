@@ -6,12 +6,14 @@
     <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
-    <Version>1.0.0.1</Version>
+    <Version>1.0.0.4</Version>
     <Authors>Nikos Georgousis</Authors>
     <Company>Hand Water Pump</Company>
     <Product>LiveLogs</Product>
     <Copyright>All rights reserved</Copyright>
     <ApplicationIcon>LivelLogs_Logo.ico</ApplicationIcon>
+    <AssemblyVersion></AssemblyVersion>
+    <FileVersion></FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

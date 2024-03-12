@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nikos\\Desktop\\Dev Log Files\\Livelogs\\LiveLogs\\LiveLogs.vbproj": {}
+    "D:\\Drbx\\Dropbox\\.Common\\LiveLogs\\Livelogs\\LiveLogs\\LiveLogs.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\Nikos\\Desktop\\Dev Log Files\\Livelogs\\LiveLogs\\LiveLogs.vbproj": {
-      "version": "1.0.0.1",
+    "D:\\Drbx\\Dropbox\\.Common\\LiveLogs\\Livelogs\\LiveLogs\\LiveLogs.vbproj": {
+      "version": "1.0.0.4",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nikos\\Desktop\\Dev Log Files\\Livelogs\\LiveLogs\\LiveLogs.vbproj",
+        "projectUniqueName": "D:\\Drbx\\Dropbox\\.Common\\LiveLogs\\Livelogs\\LiveLogs\\LiveLogs.vbproj",
         "projectName": "LiveLogs",
-        "projectPath": "C:\\Users\\Nikos\\Desktop\\Dev Log Files\\Livelogs\\LiveLogs\\LiveLogs.vbproj",
+        "projectPath": "D:\\Drbx\\Dropbox\\.Common\\LiveLogs\\Livelogs\\LiveLogs\\LiveLogs.vbproj",
         "packagesPath": "C:\\Users\\Nikos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nikos\\Desktop\\Dev Log Files\\Livelogs\\LiveLogs\\obj\\",
+        "outputPath": "D:\\Drbx\\Dropbox\\.Common\\LiveLogs\\Livelogs\\LiveLogs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nikos\\AppData\\Roaming\\NuGet\\NuGet.Config",

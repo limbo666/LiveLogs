@@ -16,11 +16,11 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("Hand Water Pump"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyCopyrightAttribute("All rights reserved"),  _
- Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.1"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0.1"),  _
+ Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.4"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0.4+4276027fd113caa0dd913f41a02c9df31fddbcd1"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("LiveLogs"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("LiveLogs"),  _
- Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.1"),  _
+ Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.4"),  _
  Assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0"),  _
  Assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")> 
 

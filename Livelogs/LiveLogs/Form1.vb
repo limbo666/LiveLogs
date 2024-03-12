@@ -1,7 +1,11 @@
-﻿Imports System.IO
+﻿Imports System.ComponentModel
+Imports System.IO
+Imports System.Net.Security
+
+Imports System.Reflection
 Imports System.Threading
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
-
+Imports LiveLogs.SoundModule
 Public Class form1
     ' Variables for log file reading
     Private logFilePath As String
@@ -18,9 +22,14 @@ Public Class form1
 
     ' Flag to control search functionality
     Dim FindEnabled = False
+    '  Dim CustomID As String = "Boo"
 
+
+    Dim TotalNumberOfLines = 0
+    Dim LogIsLoading = False
 
     Sub LoadMySettings()
+
         'READING
         Me.Top = RegGetSetting("Settings", "Top", 200)
         Me.Left = RegGetSetting("Settings", "Left", 200)
@@ -29,6 +38,20 @@ Public Class form1
         TextBox2.Text = RegGetSetting("Settings", "Textbox2", "Search term")
         Me.Width = RegGetSetting("Settings", "Width", 688)
         Me.Height = RegGetSetting("Settings", "Height", 707)
+
+
+        Keyword1 = RegGetSetting("Settings", "Keyword1", "Info")
+        Keyword2 = RegGetSetting("Settings", "Keyword2", "Warning")
+        Keyword3 = RegGetSetting("Settings", "Keyword3", "Error")
+        Keyword4 = RegGetSetting("Settings", "Keyword4", "Critical")
+        Keyword5 = RegGetSetting("Settings", "Keyword5", "Fatal")
+        Keyword6 = RegGetSetting("Settings", "Keyword6", "Boo")
+
+        LaunchKeyword = RegGetSetting("Settings", "LaunchKeyword", "Strange")
+        LaunchPath = RegGetSetting("Settings", "LaunchPath", "C:\Windows\System32\calc.exe")
+        PopUpKeyword = RegGetSetting("Settings", "PopUpKeyword", "Bizzare")
+        SoundKeyword = RegGetSetting("Settings", "SoundKeyword", "Odd")
+
     End Sub
 
     Sub SaveMySettings()
@@ -77,11 +100,16 @@ Public Class form1
 
     ' Start/Stop log reading button click event handler
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
         If isReading Then
             ' Stop reading
             isReading = False
             Button1.Text = "Start Reading"
+            lblLoading.Visible = False
         Else
+            LogIsLoading = True
+            lblLoading.Visible = True
+            tmrDetectLoading.Enabled = True
             ' Start reading
             isReading = True
             Button1.Text = "Stop Reading"
@@ -98,29 +126,80 @@ Public Class form1
         End If
     End Sub
 
-    ' Read log file method
-    Private Sub ReadLogFile()
+    Private Async Sub ReadLogFile()
         Try
             Using fileStream As New FileStream(logFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)
                 Using streamReader As New StreamReader(fileStream)
                     While isReading
-                        Dim line As String = streamReader.ReadLine()
+                        Dim line As String = Await streamReader.ReadLineAsync()
                         If line IsNot Nothing Then
                             ' Update UI with the read line
                             Invoke(Sub()
+                                       Dim action As Action = Nothing
+                                       If LogIsLoading = False Then
+                                           If Trim(SoundKeyword) <> "" Then
+                                               If line.Contains(SoundKeyword) Then
+                                                   action = AddressOf LaunchSound
+                                               End If
+
+                                           End If
+                                           If Trim(PopUpKeyword) <> "" Then
+                                               If line.Contains(PopUpKeyword) Then
+                                                   TempLineContents = line
+                                                   action = AddressOf LaunchMessage
+                                               End If
+                                           End If
+                                           If Trim(LaunchKeyword) <> "" Then
+                                               If line.Contains(LaunchKeyword) Then
+                                                   action = AddressOf LaunchProgram
+                                               End If
+                                           End If
+
+                                       End If
+
+                                       If action IsNot Nothing Then
+                                           action.Invoke()
+                                       End If
+
+                                       If line.Contains(Keyword1) Then
+                                           ' Change line color to  Green for Info
+                                           RichTextBox1.SelectionColor = Color.SeaGreen
+                                       ElseIf line.Contains(Keyword2) Then
+                                           ' Change line color to Dark Orange for Warning
+                                           RichTextBox1.SelectionColor = Color.Peru
+                                       ElseIf line.Contains(Keyword3) Then
+                                           ' Change line color to Dark Green for Info
+                                           RichTextBox1.SelectionColor = Color.IndianRed
+                                       ElseIf line.Contains(Keyword4) Then
+                                           ' Change line color to Red for Critical
+                                           RichTextBox1.SelectionColor = Color.Red
+                                       ElseIf line.Contains(Keyword5) Then
+                                           ' Change line color to Purple for Fatal
+                                           RichTextBox1.SelectionColor = Color.Purple
+                                       ElseIf line.Contains(Keyword6) Then
+                                           ' Change line color to Dark Green for Info
+                                           RichTextBox1.SelectionColor = Color.SteelBlue
+                                       Else
+                                           ' Default color for other lines
+                                           RichTextBox1.SelectionColor = Color.Black
+                                       End If
+
+                                       ' Append the line to the RichTextBox
                                        RichTextBox1.AppendText(line & vbCrLf)
+
                                        If CheckBox1.Checked Then
                                            ' Scroll to the end if autoscroll is enabled
                                            RichTextBox1.SelectionStart = RichTextBox1.TextLength
                                            RichTextBox1.ScrollToCaret()
                                        End If
                                    End Sub)
+
                             totalLinesRead += 1
                             ' Update total lines label
-                            Invoke(Sub() Label1.Text = "Total Lines Read: " & totalLinesRead)
+                            Invoke(Sub() Label1.Text = "Total lines read: " & totalLinesRead)
                         Else
                             ' Sleep to avoid high CPU usage when the file hasn't changed
-                            Thread.Sleep(100)
+                            Await Task.Delay(20)
                         End If
                     End While
                 End Using
@@ -130,6 +209,7 @@ Public Class form1
             MessageBox.Show("Error reading log file: " & ex.Message)
         End Try
     End Sub
+
 
     ' Form closing event handler
     Private Sub MainForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -345,11 +425,52 @@ Public Class form1
         Label5.Visible = False
     End Sub
 
-    Private Sub form1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MyBase.KeyPress
-
-    End Sub
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         FrmAbout.ShowDialog()
     End Sub
+
+    Private Sub SelectColorMarrkingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelectColorMarrkingToolStripMenuItem.Click
+        frmConditionalOptions.ShowDialog()
+    End Sub
+
+    Private Sub tmrDetectLoading_Tick(sender As Object, e As EventArgs) Handles tmrDetectLoading.Tick
+        Dim LinesNow = RichTextBox1.Lines.Count()
+        If LinesNow <> TotalNumberOfLines Then
+            TotalNumberOfLines = LinesNow
+            LogIsLoading = True
+        Else
+            LogIsLoading = False
+            lblLoading.Visible = False
+            tmrDetectLoading.Enabled = False
+
+        End If
+    End Sub
+
+
+    Sub LaunchSound()
+        StopSound()
+        PlaySoundFromResourcesAsync("NotificationSound1")
+        ' MsgBox("Sound")
+    End Sub
+    Sub LaunchMessage()
+        '   MsgBox("message")
+        FrmPopup.lblLine.Text = TempLineContents
+        FrmPopup.lblTime.Text = Now
+
+        TempLineContents = ""
+        FrmPopup.Show()
+
+    End Sub
+    Sub LaunchProgram()
+        Try
+            ExecuteExternalProgram(LaunchPath)
+        Catch ex As Exception
+
+        End Try
+
+        '   MsgBox("progie")
+    End Sub
+
+
 End Class
