@@ -8,13 +8,22 @@ This tool inspired from Linux "tail" command
 This application provides a simple yet powerful tool for viewing and searching log files. It allows users to load log files, monitor them in real-time, and search for specific text within the logs.
 
 ## GUI preview
-![image](https://github.com/limbo666/LiveLogs/assets/331155/c3ac81c6-dcb4-4ad1-9e23-2dd239475aea)
+Main window
+
+![image](https://github.com/limbo666/LiveLogs/assets/331155/b46027ad-840d-4aa8-a65f-c75e8040b915)
+
+Conditional options
+
+![image](https://github.com/limbo666/LiveLogs/assets/331155/6fcdb73f-6d32-4887-b75c-677099a83a7c)
+
 
 
 ## Features
 - **Real-time Log Monitoring:** The application continuously reads log files, displaying new entries as they are added.
 - **Search Functionality:** Users can search for specific text within the log file and navigate between search results.
 - **User-Friendly Interface:** The interface is intuitive and easy to use, with options to customize log viewing preferences.
+- **Conditional Color:** The program displayes lines in different colors. Keywords can be defined under Conditional options.
+- **Conditional Actions:** Sound, Popup window, Extrernal program (script) running. Keywords can be defined under Conditional options.
 
 ## Usage
 1. **Select Log File:** Choose a log file using the "Select Log File" option from the menu or by entering the file path directly.
