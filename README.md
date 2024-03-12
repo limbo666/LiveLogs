@@ -14,7 +14,8 @@ Main window
 
 Conditional options
 
-![image](https://github.com/limbo666/LiveLogs/assets/331155/6fcdb73f-6d32-4887-b75c-677099a83a7c)
+![image](https://github.com/limbo666/LiveLogs/assets/331155/d82d7a31-db53-40c4-b094-81e3426ea2ce)
+
 
 
 
