@@ -35,7 +35,7 @@ Conditional options
 
 ## Testing
 A tool that creates random log lines is available on the following repository: https://github.com/limbo666/RandomLogWriter
-Use this to create/update a log file and check the LiveLogs fucntioanlity.
+Use this tool to create/update a log file and check the LiveLogs functionality.
 
 ## Requirements
 - **Operating System:** Windows
