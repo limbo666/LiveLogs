@@ -34,7 +34,7 @@ Conditional options
 5. **Stop Log Monitoring:** Click the "Stop Reading" button to pause log monitoring.
 
 ## Testing
-A random log creation tool is available on the following repository: https://github.com/limbo666/RandomLogWriter
+A tool that creates random log lines is available on the following repository: https://github.com/limbo666/RandomLogWriter
 Use this to create/update a log file and check the LiveLogs fucntioanlity.
 
 ## Requirements
