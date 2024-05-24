@@ -1,3 +1,6 @@
+
+![GitHub all releases](https://img.shields.io/github/downloads/Limbo666/LiveLogs/total.svg?color=blue&style=flat-square)
+
 # LiveLogs
 ![image](https://github.com/limbo666/LiveLogs/assets/331155/df2efe86-229a-49c1-99ce-32d22ab8ecda)
 
